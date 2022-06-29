@@ -1,0 +1,16 @@
+.header {
+    @apply flex justify-between gap-5 p-5;
+
+    .menu {
+        @apply flex gap-4;
+    
+        &__link {
+            @apply text-black;
+            
+            &:hover {
+                @apply text-cyan-400;
+            }
+        }
+    
+    }
+}
