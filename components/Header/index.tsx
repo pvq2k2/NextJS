@@ -16,7 +16,7 @@ const Header = (props: Props) => {
             <Link href="about">About</Link>
         </li>
         <li className={styles.menu__link}>
-            <Link href="product">Product</Link>
+            <Link href="products">Product</Link>
         </li>
     </ul>
 </div>
