@@ -18,13 +18,14 @@ const Products = ({ products }: ProductProps) => {
 }
 
 export const getStaticProps: GetStaticProps<ProductProps> = async (content) => {
-    const response = await fetch(`http://localhost:3001/products`);
+    const response = await fetch(`https://6110f09bc38a0900171f0ed0.mockapi.io/products`);
     const data = await response.json();
 
     return {
         props: {
             products: data
-        }
+        },
+        revalidate: 5
     }
 
 }
