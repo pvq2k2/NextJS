@@ -14,11 +14,10 @@ const ProductDetail = ({ product }: ProductProps) => {
 
 
 export const getStaticPaths: GetStaticPaths = async (context: GetStaticPathsContext) => {
-    const data = await (await fetch(`https://6110f09bc38a0900171f0ed0.mockapi.io/products`)).json();
+    const data = await (await fetch(`http://localhost:3001/products`)).json();
     const paths = data.map(product => (
-        {params: {id: product.id}}
+        {params: {id: product.id.toString()}}
     ))
-
     return {
         paths,
         fallback: false
@@ -26,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = async (context: GetStaticPathsCont
 }
 
 export const getStaticProps: GetStaticProps<ProductProps> = async (context: GetStaticPropsContext) => {
-  const product = await (await fetch(`https://6110f09bc38a0900171f0ed0.mockapi.io/products/${context.params.id}`)).json();
+  const product = await (await fetch(`http://localhost:3001/products/${context.params.id}`)).json();
   return {
     props: { product },
     revalidate: 60

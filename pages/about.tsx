@@ -5,8 +5,7 @@ type Props = {}
 const About = (props: Props) => {
   return (
     <>
-    <Header />
-    <div className='bg-black'>About</div>
+    <div>About</div>
     </>
 
   )

@@ -1,16 +1,56 @@
-.header {
-    @apply flex justify-between gap-5 p-5;
+header {
+    @apply py-5;
 
-    .menu {
-        @apply flex gap-4;
-    
-        &__link {
-            @apply text-black;
-            
-            &:hover {
-                @apply text-cyan-400;
-            }
+    .container {
+        @apply w-[1200px] mx-auto flex justify-between items-center;
+
+        .logo {
+            @apply uppercase font-semibold text-2xl;
         }
-    
+
+        nav {
+            @apply pl-3 flex gap-10;
+
+            .menu {
+                @apply flex xl:text-lg lg:text-sm md:text-xs;
+
+                li a {
+                    @apply group block relative mx-5 mt-1 hover:text-cyan-400 transition duration-400 ease-in-out;
+
+                    &:hover {
+                        @apply text-cyan-400;
+                    }
+
+                    &:hover div {
+                        @apply scale-x-100;
+                    }
+                    div {
+                        @apply transition duration-300 ease-in-out bg-cyan-400 absolute left-0 w-full h-[2px] transform scale-x-0;
+                    }
+                }
+            }
+
+
+            .box_icon {
+                @apply flex gap-5 items-center;
+            }
+
+        }
     }
 }
+// .header__main {
+//     @apply flex justify-between gap-5 p-5;
+
+//     .menu {
+//         @apply flex gap-4;
+    
+//         &__link {
+//             @apply text-black;
+            
+//             &:hover {
+//                 @apply text-cyan-400;
+//             }
+//         }
+    
+//     }
+// }
